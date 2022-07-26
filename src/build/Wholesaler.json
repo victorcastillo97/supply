@@ -75,7 +75,7 @@
   "sourceMap": "87:808:8:-:0;;;190:23;5:9:-1;2:2;;;27:1;24;17:12;2:2;190:23:8;87:808;;;;;;",
   "deployedSourceMap": "87:808:8:-:0;;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;87:808:8;;;;;;;;;;;;;;;;;;;;;;;;;;12:1:-1;9;2:12;120:57:8;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;120:57:8;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;225:275;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;225:275:8;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;508:384;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;508:384:8;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;508:384:8;;;;;;;;;;;;;;;;;120:57;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;225:275::-;363:8;355:33;;;389:22;355:57;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;355:57:8;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;355:57:8;;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;355:57:8;;;;;;;;;;;;;;;;;423:20;:44;444:22;423:44;;;;;;;;;;;;;;;473:8;423:59;;39:1:-1;33:3;27:10;23:18;57:10;52:3;45:23;79:10;72:17;;0:93;423:59:8;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;225:275;;:::o;508:384::-;596:16;625:8;636:20;:44;657:22;636:44;;;;;;;;;;;;;;;:51;;;;625:62;;698:20;735:3;721:18;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;721:18:8;;;;;;;;;;;;;;;;;;;;;;;29:2:-1;21:6;17:15;125:4;109:14;101:6;88:42;156:4;148:6;144:17;134:27;;0:165;721:18:8;;;;698:41;;755:6;764:1;755:10;;750:114;771:3;767:1;:7;750:114;;;805:20;:44;826:22;805:44;;;;;;;;;;;;;;;850:1;805:47;;;;;;;;;;;;;;;;;;;;;;;;;796:3;800:1;796:6;;;;;;;;;;;;;:56;;;;;;;;;;;776:3;;;;;;;750:114;;;;881:3;874:10;;;;508:384;;;:::o",
   "source": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.6.6;\r\n\r\nimport './Product.sol';\r\n\r\ncontract Wholesaler {\r\n    \r\n    mapping(address => address[]) public productsAtWholesaler;\r\n    \r\n    constructor() public {}\r\n    \r\n    function productRecievedAtWholesaler(\r\n        address _address,\r\n        address _tempAddressWholesaler\r\n    ) public {\r\n        Product(_address).receivedProduct(_tempAddressWholesaler);\r\n        productsAtWholesaler[_tempAddressWholesaler].push(_address);\r\n        \r\n    }\r\n\r\n    function getAllProductsAtWholesaler(address _tempAddressWholesaler) public view returns(address[] memory) {\r\n        uint len = productsAtWholesaler[_tempAddressWholesaler].length;\r\n        address[] memory ret = new address[](len);\r\n        for (uint i = 0; i < len; i++) {\r\n            ret[i] = productsAtWholesaler[_tempAddressWholesaler][i];\r\n        }\r\n        return ret;\r\n    }\r\n}",
-  "sourcePath": "C:\\Users\\pisci\\OneDrive\\Escritorio\\victor\\app-supply\\contracts\\Wholesaler.sol",
+  "sourcePath": "C:\\Users\\pisci\\OneDrive\\Escritorio\\victor\\appsupply\\contracts\\Wholesaler.sol",
   "ast": {
     "absolutePath": "project:/contracts/Wholesaler.sol",
     "exportedSymbols": {
@@ -2311,7 +2311,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.8",
-  "updatedAt": "2022-07-26T00:01:37.468Z",
+  "updatedAt": "2022-07-26T02:14:05.657Z",
   "devdoc": {
     "methods": {}
   },

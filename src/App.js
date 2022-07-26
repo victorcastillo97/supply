@@ -29,21 +29,6 @@ import CreateItemProducto from './entities/Manufacturer/CreateItemProducto';
 import ViewItemProductos from './entities/Manufacturer/ViewItemProductos';
 import ItemProductoInfo from './entities/Manufacturer/ItemProductoInfo';
 
-// Wholesaler imports
-import Wholesaler from './entities/Wholesaler/Wholesaler';
-import ViewReceivedItemProductos from './entities/Wholesaler/ViewReceivedItemProducto';
-import RequestProductWholesaler from './entities/Wholesaler/RequestProduct';
-import TransferItemProducto from './entities/Wholesaler/TransferItemProducto';
-import WholesalerReceiveProduct from './entities/Wholesaler/ReceiveProduct';
-import WholesalerItemProductoInfo from './entities/Wholesaler/WholesalerItemProductoInfo';
-
-// Distributor imports
-import Distributor from './entities/Distributor/Distributor';
-import RequestProductDistributor from './entities/Distributor/RequestProduct';
-import DistributorReceiveProduct from './entities/Distributor/DistributorReceiveProduct';
-import DistributorViewReceivedItemProductos from './entities/Distributor/DistributorViewReceivedItemProductos';
-import DistributorItemProductoInfo from './entities/Distributor/DistributorItemProductoInfo';
-
 // Transaction imports
 import ViewTransations from './entities/Transactions/ViewTransactions';
 
@@ -163,30 +148,8 @@ class App extends Component {
             <Route exact path="/manufacturer/view-transactions/:id" component={ViewTransations} />
             <Route exact path="/manufacturer/view-requests/:id" component={ViewRequests} /> */}
 
-            <Route path="/wholesaler" render={(props) => (<Wholesaler account={this.state.account} supplyChain={this.state.supplyChain} web3={this.state.web3} />)} />
-            {/* <Route exact path="/wholesaler/view-itemProductos" component={(() => <ViewReceivedItemProductos account={this.state.account} supplyChain={this.state.supplyChain} web3={this.state.web3} />)} />
-            <Route exact path="/wholesaler/view-itemProductos/:id" component={WholesalerItemProductoInfo} />
-            <Route exact path="/wholesaler/request-product" component={(() => <RequestProductWholesaler account={this.state.account} supplyChain={this.state.supplyChain} web3={this.state.web3} />)} />
-            <Route exact path="/wholesaler/view-responses" component={(() => <ViewResponses account={this.state.account} supplyChain={this.state.supplyChain} web3={this.state.web3} />)} />
-            <Route exact path="/wholesaler/transfer-itemProducto" component={(() => <TransferItemProducto account={this.state.account} supplyChain={this.state.supplyChain} web3={this.state.web3} />)} />
-            <Route exact path="/wholesaler/receive-itemProducto" component={(() => <WholesalerReceiveProduct account={this.state.account} supplyChain={this.state.supplyChain} web3={this.state.web3} />)} />
-            <Route exact path="/wholesaler/view-requests/:id" component={ViewRequests} />
-            <Route exact path="/wholesaler/view-transactions/:id" component={ViewTransations} /> */}
-
-            <Route path="/distributor" render={(props) => (<Distributor account={this.state.account} supplyChain={this.state.supplyChain} web3={this.state.web3} />)} />
-            {/* <Route exact path="/distributor/request-product" component={(() => <RequestProductDistributor account={this.state.account} supplyChain={this.state.supplyChain} web3={this.state.web3} />)} />
-            <Route exact path="/distributor/view-responses" component={(() => <ViewResponses account={this.state.account} supplyChain={this.state.supplyChain} web3={this.state.web3} />)} />
-            <Route exact path="/distributor/receive-itemProducto" component={(() => <DistributorReceiveProduct account={this.state.account} supplyChain={this.state.supplyChain} web3={this.state.web3} />)} />            <Route exact path="/distributor/view-itemProductos" component={(() => <DistributorViewReceivedItemProductos account={this.state.account} supplyChain={this.state.supplyChain} web3={this.state.web3} />)} /> */}
-
-            {/*
-            // THESE ARE OLD DISTRIBUTOR ROUTES
-            <Route path="/wholesaler" render={(props) => (<Wholesaler account={this.state.account} supplyChain={this.state.supplyChain} web3={this.state.web3} />)} />
-            <Route exact path="/wholesaler/view-itemProductos" component={(() => <ViewReceivedItemProductos account={this.state.account} supplyChain={this.state.supplyChain} web3={this.state.web3} />)} />
-            <Route exact path="/wholesaler/request-product" component={(() => <RequestProductWholesaler account={this.state.account} supplyChain={this.state.supplyChain} web3={this.state.web3} />)} />
-            <Route exact path="/wholesaler/view-responses" component={(() => <ViewResponses account={this.state.account} supplyChain={this.state.supplyChain} web3={this.state.web3} />)} />
-            <Route exact path="/wholesaler/transfer-itemProducto" component={(() => <TransferItemProducto account={this.state.account} supplyChain={this.state.supplyChain} web3={this.state.web3} />)} />
-            <Route exact path="/wholesaler/receive-itemProducto" component={(() => <WholesalerReceiveProduct account={this.state.account} supplyChain={this.state.supplyChain} web3={this.state.web3} />)} /> */}
-
+            
+            
 
             <Route path="" component={NotFound} />
             <Route path="/admin" component={Admin} />

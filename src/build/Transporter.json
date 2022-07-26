@@ -45,7 +45,7 @@
   "sourceMap": "116:658:7:-:0;;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;116:658:7;;;;;;;",
   "deployedSourceMap": "116:658:7:-:0;;;;;;;;;;;;;;;;;;;;;;;12:1:-1;9;2:12;292:461:7;;5:9:-1;2:2;;;27:1;24;17:12;2:2;292:461:7;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;292:461:7;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;162:118;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;162:118:7;;;;;;;;;;;;;;;;;;;:::i;:::-;;292:461;464:1;444:16;:21;441:305;;;537:5;525:32;;;558:20;525:54;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;525:54:7;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;525:54:7;;;;441:305;;;619:1;599:16;:21;596:150;;;690:5;682:30;;;713:20;682:52;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;682:52:7;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;682:52:7;;;;596:150;441:305;292:461;;;:::o;162:118::-;240:5;228:32;;;261:10;228:44;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;228:44:7;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;228:44:7;;;;162:118;:::o",
   "source": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.6.6;\r\n\r\nimport './RawMaterial.sol';\r\nimport './Product.sol';\r\n\r\ncontract Transporter {\r\n    address add;\r\n    function material(address payable _addr) public payable{\r\n        RawMaterial(_addr).pickupPackage(msg.sender);\r\n    }\r\n    \r\n    function handlePackage(\r\n        address _addr,\r\n        uint _transportertype,\r\n        address _tempTransporterAddr\r\n        ) public {\r\n\r\n        if(_transportertype == 1) { \r\n            /// Supplier -> Manufacturer\r\n            RawMaterial(_addr).pickupPackage(_tempTransporterAddr);\r\n        }else if(_transportertype == 2) { \r\n            /// Manufacturer -> Wholesaler\r\n            Product(_addr).pickItemProduct(_tempTransporterAddr);\r\n        }\r\n    }\r\n    \r\n    \r\n    \r\n}",
-  "sourcePath": "C:\\Users\\pisci\\OneDrive\\Escritorio\\victor\\app-supply\\contracts\\Transporter.sol",
+  "sourcePath": "C:\\Users\\pisci\\OneDrive\\Escritorio\\victor\\appsupply\\contracts\\Transporter.sol",
   "ast": {
     "absolutePath": "project:/contracts/Transporter.sol",
     "exportedSymbols": {
@@ -1623,7 +1623,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.8",
-  "updatedAt": "2022-07-26T00:01:37.456Z",
+  "updatedAt": "2022-07-26T02:14:05.652Z",
   "devdoc": {
     "methods": {}
   },

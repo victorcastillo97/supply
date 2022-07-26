@@ -10,11 +10,9 @@ import Typography from '@material-ui/core/Typography';
 import { Grid } from '@material-ui/core';
 
 import Owner from '../images/owner.png';
-import Distributer from '../images/Distributer.jpg';
 import Supplier from '../images/Supplier.png';
 import Manufacturer from '../images/Manufacturer.png';
 import Transporter from '../images/Transporter.png';
-import Wholesaler from '../images/Wholesaler.jpg';
 
 import SignIn from '../login/SignIn';
 import {BrowserRouter as Router, NavLink} from 'react-router-dom';
@@ -73,10 +71,11 @@ function Cards() {
   const classes = useStyles();
 
   return (
-  <Router>
+    <Router>
     <Grid container>
       <Grid item md={2}>
         <Card className={classes.root1}>
+        <a href="/owner">
           <CardActionArea>
             <CardMedia className={classes.media} image={Owner} title="Owner"/>
             <CardContent>
@@ -86,80 +85,49 @@ function Cards() {
               </Typography> */}
             </CardContent>
           </CardActionArea>
-          <CardActions>
-            <Button  href="/owner" size="small" color="primary"> Click Here </Button>
-          </CardActions>
+        </a>
         </Card>
       </Grid>
 
-      <Grid item md={2}>
-        <Card className={classes.root2}>
-          <CardActionArea>
-            <CardMedia className={classes.media}image={Supplier}title="Supplier"/>
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="h2">Supplier</Typography>
-            </CardContent>
-          </CardActionArea>
-          <CardActions>
-            <Button href="/supplier"size="small" color="primary">Click Here</Button>
-          </CardActions>
-        </Card>
-      </Grid>
+      
 
       <Grid item md={2}>
         <Card className={classes.root3}>
+        <a href="/transporter">
           <CardActionArea>
             <CardMedia className={classes.media}image={Transporter}title="Transporter"/>
             <CardContent>
               <Typography gutterBottom variant="h5" component="h2">Transporter</Typography>
             </CardContent>
           </CardActionArea>
-          <CardActions>
-            <Button href= "/transporter" size="small" color="primary">Click Here</Button>
-          </CardActions>
+        </a>
         </Card>
       </Grid>
 
       <br/>
       <Grid item md={2}>
         <Card className={classes.root4}>
-          <CardActionArea>
-            <CardMedia className={classes.media}image={Manufacturer}title="Manufacturer"/>
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="h2">Manufacturer</Typography>
-            </CardContent>
-          </CardActionArea>
-          <CardActions>
-            <Button href="/manufacturer" size="small" color="primary">Click Here</Button>
-          </CardActions>
+          <a href="/manufacturer">
+            <CardActionArea>
+              <CardMedia className={classes.media}image={Manufacturer}title="Manufacturer"/>
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">Mining</Typography>
+              </CardContent>
+            </CardActionArea>
+          </a>
         </Card>
       </Grid>
 
       <Grid item md={2}>
-        <Card className={classes.root5}>
+        <Card className={classes.root2}>
+        <a href="/supplier">
           <CardActionArea>
-            <CardMedia className={classes.media}image={Wholesaler}title="Wholesaler"/>
+            <CardMedia className={classes.media}image={Supplier}title="supplier"/>
             <CardContent>
-              <Typography gutterBottom variant="h5" component="h2">Wholesaler</Typography>
+              <Typography gutterBottom variant="h5" component="h2">Repair center</Typography>
             </CardContent>
           </CardActionArea>
-          <CardActions>
-            <Button href="/wholesaler" size="small" color="primary">Click Here</Button>
-          </CardActions>
-        </Card>
-      </Grid>
-
-      <Grid item md={2}>
-        <Card className={classes.root6}>
-          <CardActionArea>
-            <CardMedia className={classes.media}image={Distributer}title="Distributor"/>
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="h2">Distributor</Typography>
-            </CardContent>
-          </CardActionArea>
-          <CardActions>
-            <Button href= "/distributor"size="small" color= "primary">Click Here</Button>
-          </CardActions>
+        </a>
         </Card>
       </Grid>
 
